@@ -23,7 +23,7 @@ echo "Installing local conda environment"
 conda install conda-forge::openjdk
 conda install nextflow 
 # conda install spades 
-conda install bioconda::spades=3.15.4
+conda install bioconda::spades
 # conda install -y --file conda-requirements-software.txt 
 
 echo "Installing local databases"
