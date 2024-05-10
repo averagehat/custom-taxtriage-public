@@ -4,6 +4,8 @@
 
 ## VDB Version
 
+Note: all of the below assumes you are inside this root directory. 
+
 1. Base on your Operating system, install Docker and miniconda:
 
 https://docs.docker.com/engine/install/
@@ -16,12 +18,18 @@ https://docs.anaconda.com/free/miniconda/#quick-command-line-install
 $ bash installer.sh $HOME/miniconda/bin
 ```
 Note: you can also follow the taxtriage installation instructions; but make sure to install spades as well. 
-3. Make sure your conda environment is loaded (export the bin/ folder to PATH).
 
-4. Make sure to use the `--reference_fasta` command. Recommended command: 
+3. Run the first database download script
+```
+$ bash dls.sh
+```
+
+4. Make sure your conda environment is loaded (export the bin/ folder to PATH).
+
+5. Make sure to use the `--reference_fasta` command. Recommended command: 
 
 ```
-nextflow run ./main.nf --input sheet.csv --db "databases/k2_viral" --outdir output/ -profile local,docker -r main --reference_fasta ./refer.fasta --assembly "assembly_summary_refseq.txt" --skip_fastp -resume 
+nextflow run ./main.nf --input sheet.csv --db "databases/k2_viral" --outdir output/ -profile local,docker -r main --reference_fasta ./refer.fasta --assembly "databases/assembly_summary_refseq.txt" --skip_fastp -resume 
 ```
 
 
