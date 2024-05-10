@@ -21,7 +21,7 @@ Note: you can also follow the taxtriage installation instructions; but make sure
 4. Make sure to use the `--reference_fasta` command. Recommended command: 
 
 ```
-nextflow --input example-sheet.csv --db "databases/k2_viral" --outdir output/ -profile local,docker -r main --reference_fasta ./refer.fasta --assembly "/opt/VDBSoftware/custom-taxtriage/examples/assembly_summary_refseq.txt" --skip_fastp -resume 
+nextflow --input example-sheet.csv --db "databases/k2_viral" --outdir output/ -profile local,docker -r main --reference_fasta ./refer.fasta --assembly "examples/assembly_summary_refseq.txt" --skip_fastp -resume 
 ```
 
 
