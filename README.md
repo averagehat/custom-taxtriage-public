@@ -32,7 +32,75 @@ $ bash dls.sh
 nextflow run ./main.nf --input sheet.csv --db "databases/k2_viral" --outdir output/ -profile local,docker -r main --reference_fasta ./refer.fasta --assembly "databases/assembly_summary_refseq.txt" --skip_fastp -resume 
 ```
 
+You may need to drop the -r option; you may also need to drop the -resume option:
 
+```
+nextflow run ./main.nf --input sheet.csv --db "databases/k2_viral" --outdir output/ -profile local,docker --reference_fasta ./refer.fasta --assembly "databases/assembly_summary_refseq.txt" --skip_fastp 
+```
+
+## Conda Transfer
+
+1. Make sure that the pipeline is installed on your current machine.
+
+2. Install conda-pack: 
+
+```
+$ conda install -c conda-forge conda-pack
+```
+
+2. After sourcing your nextflow conda environment, export it. Assuming your environment's name is "tax_env":
+
+```
+$ conda pack -n tax_env -o tax_env.tar.gz
+```
+
+3. On the other machine, unpack the environment into the chosen folder:
+
+```
+$ tar -xvf ~/envs/tax_env.tar.gz -C tax_env
+
+$ source ~/envs/tax_env/bin/activate
+
+$ conda-unpack
+```
+
+For more information, see: https://www.anaconda.com/blog/moving-conda-environments
+
+## Docker Transfer 
+
+1. Use the scripts in `docker-scripts` to save the required images. 
+
+```
+bash docker-scripts/pull-containers.sh
+
+bash docker-scripts/docker-save.sh
+```
+
+This will save the images as tar files in the 'containers' directory.
+
+2. After you've transfered this project onto the other machine, unpack the saved packages:
+
+```
+bash docker-scripts/unpack-containers.sh
+```
+
+## Docker Transfer Alternative
+
+This alternative transfer solution is less flexible but is easier, faster, and less likely to create dependency issues. 
+
+If you have successfully run the pipeline are your local machine, and don't need to use different packages (i.e., you won't use different pipeline commands on the offline machine), then use the following process:
+
+```
+# On the online machine where taxtriage is installed:
+
+docker save $(docker images --format '{{.Repository}}:{{.Tag}}' | grep -v "<none>:<none>") -o all-packages.tar
+
+
+# On the offline machine:
+
+docker load -i all-packages.tar
+
+```
 ## Introduction
 
 <!-- TODO nf-core: Write a 1-2 sentence summary of what data the pipeline is for and what it does -->
