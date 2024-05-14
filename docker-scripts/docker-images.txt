@@ -1,0 +1,129 @@
+{
+    "processes": [
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:TRIMGALORE",
+            "container": "quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:INPUT_CHECK:SAMPLESHEET_CHECK",
+            "container": "quay.io/biocontainers/python:3.8.3"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:MULTIQC",
+            "container": "quay.io/biocontainers/multiqc:1.12--pyhdfd78af_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:PATHOGENS:PATHOGENS_FIND_SAMPLE",
+            "container": "quay.io/biocontainers/pysam:0.21.0--py39hcada746_1"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:KRONA_KTIMPORTTEXT",
+            "container": "quay.io/biocontainers/krona:2.8.1--pl5321hdfd78af_1"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:PATHOGENS:PATHOGENS_MERGE_REPORT",
+            "container": "quay.io/jhuaplbio/reportlab-pdf:4.0.6"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:SAMTOOLS_INDEX",
+            "container": "quay.io/biocontainers/samtools:1.17--h00cdaf9_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:CONFIDENCE_METRIC",
+            "container": "quay.io/biocontainers/pysam:0.21.0--py39hcada746_1"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:MINIMAP2_ALIGN",
+            "container": "quay.io/biocontainers/mulled-v2-66534bcbb7031a148b13e2ad42583020b9cd25c4:1679e915ddb9d6b4abda91880c4b48857d471bd8-0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:BOWTIE2_ALIGN",
+            "container": "quay.io/biocontainers/mulled-v2-ac74a7f02cebcfcc07d8e8d1d750af9c83b4d45a:a0ffedb52808e102887f6ce600d092675bf3528a-0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:TOP_HITS",
+            "container": "quay.io/biocontainers/python:3.8.3"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:REMOVETAXIDSCLASSIFICATION",
+            "container": "quay.io/biocontainers/gawk:4.2.0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:KREPORT_TO_KRONATXT",
+            "container": "quay.io/biocontainers/biopython:1.75"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:MERGEDKRAKENREPORT",
+            "container": "quay.io/biocontainers/biopython:1.75"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:SAMTOOLS_COVERAGE",
+            "container": "quay.io/biocontainers/samtools:1.19.2--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:CUSTOM_DUMPSOFTWAREVERSIONS",
+            "container": "quay.io/biocontainers/multiqc:1.11--pyhdfd78af_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:KRAKEN2_KRAKEN2",
+            "container": "quay.io/biocontainers/mulled-v2-5799ab18b5fc681e75923b2450abaa969907ec98:87fc08d11968d081f3e8a37131c1f1f6715b6542-0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:FILTERKRAKEN",
+            "container": "quay.io/biocontainers/python:3.8.3"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:SAMTOOLS_HIST_COVERAGE",
+            "container": "quay.io/biocontainers/samtools:1.19.2--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:BOWTIE2_BUILD",
+            "container": "quay.io/biocontainers/bowtie2:2.4.4--py39hbb4e92a_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:NANOPLOT",
+            "container": "quay.io/biocontainers/nanoplot:1.42.0--pyhdfd78af_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:MERGE_CONFIDENCE",
+            "container": "quay.io/biocontainers/biopython:1.75"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:CONFIDENCE_MERGE",
+            "container": "quay.io/biocontainers/pysam:0.21.0--py39hcada746_1"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:CONVERT_CONFIDENCE",
+            "container": "quay.io/biocontainers/biopython:1.75"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:MAP_LOCAL_ASSEMBLY_TO_FASTA",
+            "container": "quay.io/biocontainers/biopython:1.75"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:PYCOQC",
+            "container": "quay.io/biocontainers/pycoqc:2.5.2--py_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:SAMTOOLS_DEPTH",
+            "container": "quay.io/biocontainers/samtools:1.17--h00cdaf9_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:PORECHOP",
+            "container": "quay.io/biocontainers/porechop:0.2.4--py39h7cff6ad_2"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ARTIC_GUPPYPLEX",
+            "container": "quay.io/biocontainers/artic:1.2.1--py_0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:FASTQC",
+            "container": "quay.io/biocontainers/fastqc:0.11.9--0"
+        },
+        {
+            "name": "NFCORE_TAXTRIAGE:TAXTRIAGE:ALIGNMENT:RSEQC_BAMSTAT",
+            "container": "quay.io/biocontainers/rseqc:3.0.1--py37h516909a_1"
+        }
+    ]
+}
+
